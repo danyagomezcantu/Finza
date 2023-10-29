@@ -1,63 +1,39 @@
-import Link from "next/link";
 import type { NextPage } from "next";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { MetaHeader } from "~~/components/MetaHeader";
+import Footer from "../components/footer";
+import HomeownershipJourneyContainer from "../components/homeownership-journey-container";
+import SectionForm from "../components/section-form";
+import Header from "../components/header";
 
-const Home: NextPage = () => {
+const Homepage: NextPage = () => {
   return (
-    <>
-      <MetaHeader />
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="px-5">
-          <h1 className="text-center mb-8">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
-          </h1>
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/pages/index.tsx
-            </code>
+    <div className="relative bg-studio-darkmode-allwhite-ffffff w-full h-[1909px] text-center text-21xl text-black font-components-button-large">
+      <Footer />
+      <div className="absolute top-[93px] left-[calc(50%_-_960px)] w-[1920px] h-[1626px]">
+        <HomeownershipJourneyContainer />
+        <SectionForm />
+        <div className="absolute top-[1232px] left-[calc(50%_-_864px)] leading-[48px] inline-block w-[1725px]">
+          <p className="m-0">
+            <span className="font-components-button-large">{`Experience a new era of home buying with `}</span>
+            <i className="font-bold font-components-button-large">{`FINZA, `}</i>
+            <span>
+              your gateway to decentralized mortgages. Bridge the gap between
+              crypto assets and real estate, ensuring a swift and secure journey
+              to your dream home. We're redefining real estate financing by
+              harnessing the power of blockchain technology for seamless
+              transactions.
+            </span>
           </p>
-          <p className="text-center text-lg">
-            Edit your smart contract{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              YourContract.sol
-            </code>{" "}
-            in{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/hardhat/contracts
-            </code>
+          <p className="m-0">&nbsp;</p>
+          <p className="m-0">
+            <i className="font-medium">
+              Join us in shaping the future of homeownership!
+            </i>
           </p>
-        </div>
-
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <BugAntIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link">
-                  Debug Contract
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
-    </>
+      <Header />
+    </div>
   );
 };
 
-export default Home;
+export default Homepage;
